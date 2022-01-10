@@ -1,3 +1,6 @@
+
+# Define all operations calculator can perform
+
 def math(operation, num1, num2):
     if operation == "+":
         answer = num1 + num2

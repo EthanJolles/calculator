@@ -1,11 +1,12 @@
 import tkinter as tk
 
-
-def make_window():
+# Define GUI window
+def make_calculator():
     window = tk.Tk()
-    greeting = tk.Label(text="Hello, Tkinter")
-    greeting.pack()
+    header = tk.Label(text="Calculator")
+    text_box = tk.Entry()
+
+    header.pack()
+    text_box.pack()
+
     window.mainloop()
-
-
-make_window()
