@@ -1,27 +1,5 @@
 import tkinter as tk
-
-
-# define all operations calculator can perform
-def math(num1, operation, num2):
-    if operation == "+":
-        answer = num1 + num2
-    elif operation == "-":
-        answer = num1 - num2
-    elif operation == "*":
-        answer = num1 * num2
-    elif operation == "/":
-        answer = num1 / num2
-    else:
-        return "ERROR, UNIDENTIFIED OPERATOR"
-    return answer_simplifier(answer)
-
-
-# simplify answer if useless floating points
-def answer_simplifier(answer):
-    if answer % 1 == 0:
-        return int(answer)
-    else:
-        return answer
+import operations
 
 
 def return_answer():
@@ -31,7 +9,7 @@ def return_answer():
     term_input = ent_number.get()
     string_term_input = str(term_input)
     split_term_input = string_term_input.split()
-    lbl_answer["text"] = math(float(split_term_input[0]), split_term_input[1], float(split_term_input[2]))
+    lbl_answer["text"] = operations.math(float(split_term_input[0]), split_term_input[1], float(split_term_input[2]))
     print(f"{split_term_input} = {lbl_answer['text']}")
 
 
