@@ -1,5 +1,5 @@
 import tkinter as tk
-
+import functions as func
 
 # Define GUI window
 def make_calculator():
@@ -14,6 +14,7 @@ def make_calculator():
 
 
     btn_submit = tk.Button(
+        master=window,
         text="Submit",
         width=2,
         height=1,
