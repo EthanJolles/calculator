@@ -13,6 +13,10 @@ def return_answer():
     print(f"{split_term_input} = {lbl_answer['text']}")
 
 
+def number_button_input(number):
+    ent_number.insert(-1, number)
+
+
 # set up window
 window = tk.Tk()
 window.title("Calculator")
@@ -24,24 +28,26 @@ ent_number = tk.Entry(master=frm_entry, width=5)
 lbl_calculator = tk.Label(master=frm_entry, text="Calculator")
 lbl_answer = tk.Label(master=frm_entry, text="answer-placeholder")
 
-# Layout the temperature Entry and Label in frm_entry
+# Layout the Entry and Label in frm_entry
 # using the .grid() geometry manager
 ent_number.grid(row=1, column=0, sticky="w")
 lbl_calculator.grid(row=0, column=1, sticky="n", padx=10)
 lbl_answer.grid(row=1, column=2, sticky="e")
 
-btn_submit = tk.Button(
-    master=frm_entry,
-    text="=",
-    width=2,
-    height=1,
-    bg="black",
-    fg="white",
-    command=return_answer
-)
+# buttons
+btn_submit = tk.Button(master=frm_entry, text="=", width=2, height=1, bg="black", fg="white", command=return_answer)
+btn_three = tk.Button(master=window, text="3", width=2, height=1, bg="black", fg="white",
+                      command=number_button_input("3"))
+btn_one = tk.Button(master=window, text="1", width=2, height=1, bg="black", fg="white",
+                    command=number_button_input("1"))
+btn_two = tk.Button(master=window, text="2", width=2, height=1, bg="black", fg="white",
+                    command=number_button_input("2"))
 
 # Set-up the layout using the .grid() geometry manager
 frm_entry.grid(row=0, column=0, padx=10)
 btn_submit.grid(row=1, column=1, padx=10)
+btn_one.grid(row=2, column=0)
+btn_two.grid(row=2, column=1)
+btn_three.grid(row=2, column=2)
 
 window.mainloop()

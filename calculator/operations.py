@@ -1,5 +1,3 @@
-import main as m
-
 # define all operations calculator can perform
 def math(num1, operation, num2):
     if operation == "+":
