@@ -1,5 +1,7 @@
-    #to-do list
+    # to-do list
     TODO - add more loose inputs so it wont throw exceptions if you do '2+2'
-    TODO - add more buttons like 123456789...
-    TODO - add more operations like (x^2, sqrt(x), logx) and trig functions
+    TODO - add more operations like x^2, sqrt(x), logx, and trig functions eventually
     TODO - add console underneath the calculator so user can see exceptions and console logs.
+
+    # done
+    # add more buttons like 123456789...
