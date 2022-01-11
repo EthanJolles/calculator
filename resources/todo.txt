@@ -1,4 +1,6 @@
     # to-do list
+    TODO - make buttons taller so you don't feel like you're playing kovaks when you try to click each one
+    TODO - make a clear button and try to fit that in without ruining the whole 'aesthetic' <- lmao
     TODO - add more loose inputs so it wont throw exceptions if you do '2+2'
     TODO - add more operations like x^2, sqrt(x), logx, and trig functions eventually
     TODO - add console underneath the calculator so user can see exceptions and console logs.
