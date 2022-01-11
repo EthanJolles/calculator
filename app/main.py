@@ -13,41 +13,73 @@ def return_answer():
     print(f"{split_term_input} = {lbl_answer['text']}")
 
 
-def number_button_input(number):
-    ent_number.insert(-1, number)
-
-
 # set up window
 window = tk.Tk()
 window.title("Calculator")
 window.resizable(width=False, height=False)
 
+
 # term entry frame
 frm_entry = tk.Frame(master=window)
-ent_number = tk.Entry(master=frm_entry, width=5)
-lbl_calculator = tk.Label(master=frm_entry, text="Calculator")
-lbl_answer = tk.Label(master=frm_entry, text="answer-placeholder")
+frm_entry.grid(row=0)
 
-# Layout the Entry and Label in frm_entry
-# using the .grid() geometry manager
-ent_number.grid(row=1, column=0, sticky="w")
-lbl_calculator.grid(row=0, column=1, sticky="n", padx=10)
-lbl_answer.grid(row=1, column=2, sticky="e")
+ent_number = tk.Entry(master=frm_entry, width=30)
+ent_number.grid(row=1, column=0, pady=5, sticky=tk.E + tk.W)
 
-# buttons
-btn_submit = tk.Button(master=frm_entry, text="=", width=2, height=1, bg="black", fg="white", command=return_answer)
-btn_three = tk.Button(master=window, text="3", width=2, height=1, bg="black", fg="white",
-                      command=number_button_input("3"))
-btn_one = tk.Button(master=window, text="1", width=2, height=1, bg="black", fg="white",
-                    command=number_button_input("1"))
-btn_two = tk.Button(master=window, text="2", width=2, height=1, bg="black", fg="white",
-                    command=number_button_input("2"))
+# lbl_calculator = tk.Label(master=frm_entry, text="Calculator")
+# lbl_calculator.grid(row=0, padx=10, sticky=tk.E + tk.W)
 
-# Set-up the layout using the .grid() geometry manager
-frm_entry.grid(row=0, column=0, padx=10)
-btn_submit.grid(row=1, column=1, padx=10)
-btn_one.grid(row=2, column=0)
-btn_two.grid(row=2, column=1)
-btn_three.grid(row=2, column=2)
+
+# grid of buttons frame
+frm_buttons = tk.Frame(master=window)
+frm_buttons.grid(row=1)
+
+# row one
+btn_seven = tk.Button(master=frm_buttons, text="7", width=8, height=1, bg="black", fg="white")
+btn_seven.grid(row=2, column=0, padx=10)
+
+btn_eight = tk.Button(master=frm_buttons, text="8", width=8, height=1, bg="black", fg="white")
+btn_eight.grid(row=2, column=1)
+
+btn_nine = tk.Button(master=frm_buttons, text="9", width=8, height=1, bg="black", fg="white")
+btn_nine.grid(row=2, column=2)
+
+# row two
+btn_four = tk.Button(master=frm_buttons, text="4", width=8, height=1, bg="black", fg="white")
+btn_four.grid(row=3, column=0)
+
+btn_five = tk.Button(master=frm_buttons, text="5", width=8, height=1, bg="black", fg="white")
+btn_five.grid(row=3, column=1)
+
+btn_six = tk.Button(master=frm_buttons, text="6", width=8, height=1, bg="black", fg="white")
+btn_six.grid(row=3, column=2)
+
+# row three
+btn_one = tk.Button(master=frm_buttons, text="1", width=8, height=1, bg="black", fg="white")
+btn_one.grid(row=4, column=0)
+
+btn_two = tk.Button(master=frm_buttons, text="2", width=8, height=1, bg="black", fg="white")
+btn_two.grid(row=4, column=1)
+
+btn_three = tk.Button(master=frm_buttons, text="3", width=8, height=1, bg="black", fg="white")
+btn_three.grid(row=4, column=2)
+
+# row four
+btn_zero = tk.Button(master=frm_buttons, text="0", width=8, height=1, bg="black", fg="white")
+btn_zero.grid(row=5, column=0)
+
+btn_point = tk.Button(master=frm_buttons, text=".", width=8, height=1, bg="black", fg="white")
+btn_point.grid(row=5, column=1)
+
+btn_submit = tk.Button(master=frm_buttons, text="=", width=8, height=1, bg="black", fg="white", command=return_answer)
+btn_submit.grid(row=5, column=2)
+
+
+# results frame
+frm_results = tk.Frame(master=window)
+frm_results.grid(row=2)
+
+lbl_answer = tk.Label(master=frm_results, text="answer goes here")
+lbl_answer.grid(row=6)
 
 window.mainloop()
